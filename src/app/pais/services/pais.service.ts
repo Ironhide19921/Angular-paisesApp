@@ -16,4 +16,15 @@ export class PaisService {
     // el of atrapa el error y devuelve un observable vacio, el array vacio
     return this.http.get<Country[]>(url);
   }
+
+  buscarCapital(termino: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/capital/${termino}`;
+    // el of atrapa el error y devuelve un observable vacio, el array vacio
+    return this.http.get<Country[]>(url);
+  }
+
+  getPaisPorAlpha(id: string): Observable<Country> {
+    const url = `${this.apiUrl}/alpha/${id}`;
+    return this.http.get<Country>(url);
+  }
 }
